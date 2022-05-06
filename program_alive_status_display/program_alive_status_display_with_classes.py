@@ -1,26 +1,5 @@
 #!/usr/bin/python
 
-"""
-Sometimes, calculations take a few seconds or even minutes. This script shows 
-how a simple "I'm still alive" indicator can be implemented in a separate thread 
-printing some output to the console so that users don't type nervously on the 
-console thinking the program has crashed.
-
-"THE BEER-WARE LICENSE" (Revision 42):
-Michael Merz <mail@telekobold.de> wrote this file. As long as you 
-retain this notice you can do whatever you want with this stuff. If we meet 
-some day, and you think this stuff is worth it, you can buy me a beer in 
-return. telekobold.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
-SOFTWARE.
-"""
-
 import threading
 import time
 
@@ -52,9 +31,9 @@ class ProgramAliveStatusDisplay(threading.Thread):
         threading.Thread.__init__(self)
         
     def run(self):
-        self.progrees_indicator()
+        self.progress_indicator()
     
-    def progrees_indicator(self):
+    def progress_indicator(self):
         print(f"The calculation of {self.some_string} is in progress, please wait..", end="", flush=True)
         while(True):
             print(".", end="", flush=True)
