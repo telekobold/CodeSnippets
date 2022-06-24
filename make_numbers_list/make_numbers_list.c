@@ -48,7 +48,6 @@ int main()
     absolute_filepath_ptr = copy_str(absolute_filepath, user_file_path, &count, 1);
     absolute_filepath_ptr = copy_str(absolute_filepath_ptr, dirname, &count, 1);
     copy_str(absolute_filepath_ptr, filename, &count, 0);
-    printf("%s\n", absolute_filepath); // test output
     unsigned number = 10;
     
     if(access(absolute_filepath, F_OK) == 0)
