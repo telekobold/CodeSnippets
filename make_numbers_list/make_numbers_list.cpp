@@ -11,11 +11,11 @@
 #include <stdlib.h> // for getenv()
 #include <fstream> // for ofstream
 #include <unistd.h> // for access(), F_OK()
-#ifdef WIN32
-#define OS_SEP '\\'
-#else
+//#ifdef WIN32
+//#define OS_SEP '\\'
+//#else
 #define OS_SEP '/'
-#endif
+//#endif
 
 int main()
 {

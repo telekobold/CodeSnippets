@@ -10,6 +10,11 @@
 #include <stdlib.h> // for getenv()
 #include <unistd.h> // for access(), F_OK
 #include <string.h> // for strcpy
+//#ifdef WIN32
+//#define OS_SEP '\\'
+//#else
+#define OS_SEP '/'
+//#endif
 
 // `end` must be any number != 0 if the produced string is the end of a file
 // path (e.g. if the name of a text file is appended). If `end` is 0,
@@ -25,7 +30,7 @@ char *copy_str(char *dest, char *src, unsigned *count, int end)
         *count++;
     }
     if(end)
-        *dest++ = '/';
+        *dest++ = OS_SEP;
     else
         *dest++ = '\0';
     *count++;
@@ -34,7 +39,7 @@ char *copy_str(char *dest, char *src, unsigned *count, int end)
 
 int main()
 {
-    // Build the absolute file path "/home/telekobold/Sortierung/Inventur.txt"
+    // Build the absolute file path "/home/telekobold/inventory/inventory.txt"
     // (quite complicated in C):
     // Get the user's file path (e.g. "/home/telekobold" on my system):
     char user_file_path[PATH_MAX];
@@ -63,5 +68,5 @@ int main()
     for(int i = 1; i <= number; i++)
         fprintf(inv_file, "%d:\n\n\n", i);
     
-    printf("The file %s was written successfully.", absolute_filepath);
+    printf("The file %s was written successfully.\n", absolute_filepath);
 }
