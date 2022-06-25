@@ -6,4 +6,3 @@ started in a separate thread either by using another function or another
 class. The goal is to prevent the user from nervously typing on the keyboard 
 thinking some input should be made or that the program has crashed.
 
-This small project is licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en).

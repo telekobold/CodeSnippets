@@ -27,5 +27,3 @@ a few lines of Python code. After finishing this, I felt like implementing this
 in a few other programming languages for practice purposes since these are very
 basic operations (e.g. writing to a file).
 
-This small project is licensed under 
-[CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
